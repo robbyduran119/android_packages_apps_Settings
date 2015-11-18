@@ -47,10 +47,23 @@
                 android:icon="@*android:drawable/ic_audio_ring_notif"
                 android:title="@string/notification_volume_option_title" />
 
+        <!-- Link Volume Notification -->
+        <SwitchPreference
+                android:key="volume_link_notification"
+                android:title="@string/link_volume_option_title"
+                android:persistent = "false"
+                android:defaultValue = "true" />
+
         <!-- Also vibrate for calls -->
         <SwitchPreference
                 android:key="vibrate_when_ringing"
                 android:title="@string/vibrate_when_ringing_title" />
+
+        <!-- Volume Steps -->
+        <PreferenceScreen
+                android:key="volume_steps"
+                android:title="@string/volume_steps_title"
+                android:fragment="com.android.settings.VolumeSteps" />
 
         <!-- Headset connect player -->
         <ListPreference
@@ -102,11 +115,6 @@
     <PreferenceCategory
           android:title="@string/other_sound_category_preference_title"
           android:order="-50">
-
-        <PreferenceScreen
-          android:key="volume_steps"
-          android:title="@string/volume_steps_title"
-          android:fragment="com.android.settings.VolumeSteps" />
 
         <!-- Dial pad tones -->
         <SwitchPreference

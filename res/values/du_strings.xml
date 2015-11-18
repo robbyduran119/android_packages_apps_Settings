@@ -168,6 +168,8 @@
     <string name="volume_steps_7" translatable="false">7</string>
     <string name="volume_steps_5" translatable="false">5</string>
 
+    <string name="link_volume_option_title">Link ring and notification volume</string>
+
     <!-- Scramble PIN layout when unlocking -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
