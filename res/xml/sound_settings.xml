@@ -103,6 +103,11 @@
           android:title="@string/other_sound_category_preference_title"
           android:order="-50">
 
+        <PreferenceScreen
+          android:key="volume_steps"
+          android:title="@string/volume_steps_title"
+          android:fragment="com.android.settings.VolumeSteps" />
+
         <!-- Dial pad tones -->
         <SwitchPreference
           android:key="dial_pad_tones"
