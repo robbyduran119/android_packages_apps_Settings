@@ -410,6 +410,12 @@
             android:title="@string/track_frame_time"
             android:entries="@array/track_frame_time_entries"
             android:entryValues="@array/track_frame_time_values" />
+            
+        <com.dirtyunicorns.tweaks.preferences.GlobalSettingSwitchPreference
+            android:key="show_cpu_overlay"
+            android:title="@string/show_cpu_info"
+            android:summary="@string/show_cpu_info_summary" 
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
