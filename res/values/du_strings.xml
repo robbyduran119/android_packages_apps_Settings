@@ -117,6 +117,14 @@
     <string name="toast_insult_14">This is why nobody likes you...</string>
     <string name="toast_insult_15">Are you even trying?!</string>
 
+	<!-- Alert on optimal charge -->
+    <string name="alert_on_charged_level_title">Optimal charge level alert</string>
+    <string name="alert_on_charged_level_summary">Notify and play sound/vibrate on optimal charge level if screen is off since at least 1 min.\nNotification can be disabled separately long pressing on it.</string>
+    <string name="alert_on_charged_level_dis">Disabled</string>
+    <string name="alert_on_charged_level_80">"80%"</string>
+    <string name="alert_on_charged_level_90">"90%"</string>
+    <string name="alert_on_charged_level_99">"99%"</string>
+
     <!-- [CHAR LIMIT=80]-->
     <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
     <!--  [CHAR LIMIT=160]-->
