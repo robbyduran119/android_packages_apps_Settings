@@ -26,11 +26,13 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 
 import java.util.List;
+import java.util.Arrays;
 
 
 public class ThemeUtils {
 
-    private static final String substratumVersionMetadata = "Substratum_Version";
+    private static final String SUBSTRATUM_VERSION_METADATA = "Substratum_Version";
+    private static final String[] WHITELISTED_OVERLAYS = { "android.auto_generated_rro__" };
 
     private static boolean isSubstratumOverlay(
             Context mContext,
@@ -39,8 +41,8 @@ public class ThemeUtils {
             ApplicationInfo appInfo = mContext.getPackageManager().getApplicationInfo(
                     packageName, PackageManager.GET_META_DATA);
             if (appInfo.metaData != null) {
-                String returnMetadata = appInfo.metaData.getString(substratumVersionMetadata);
-                if (returnMetadata != null) {
+                int returnMetadata = appInfo.metaData.getInt(SUBSTRATUM_VERSION_METADATA);
+                if (String.valueOf(returnMetadata) != null) {
                     return true;
                 }
             }
@@ -54,8 +56,9 @@ public class ThemeUtils {
             OverlayManager mOverlayManager = new OverlayManager();
             List<OverlayInfo> overlayInfoList =
                     mOverlayManager.getOverlayInfosForFramework();
-            for (OverlayInfo overlayInfo : overlayInfoList) {
-                if (isSubstratumOverlay(mContext, overlayInfo.packageName))
+            for (OverlayInfo overlay : overlayInfoList) {
+                if (Arrays.asList(WHITELISTED_OVERLAYS).contains(overlay.packageName)) continue;
+                if (isSubstratumOverlay(mContext, overlay.packageName))
                     return true;
             }
         } catch (RemoteException ignored) {
