@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Security dialog -->
+  <string name="aosp_security_bulletin_url">https://source.android.com/security/bulletin/2018-04-01</string>
   <string name="security_dialog_title">Güvenlik güncellemesi</string>
   <string name="security_dialog_neutral_button">AOSP Güvenlik Bültenleri</string>
   <string name="android_security_title">AOSP güvenlik yaması düzeyi</string>
@@ -118,6 +119,6 @@
   <string name="font_picker_title">Yazı tipi</string>
   <string name="font_picker_progress">Yeni yazı tipi uygulanıyor\u2026</string>
   <!-- Search -->
-  <string name="menu_search">Uygulamalar ara</string>
+  <string name="menu_search">Uygulamalarda ara</string>
   <string name="menu_search_hint">Uygulamalar aranıyor\u2026</string>
 </resources>
