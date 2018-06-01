@@ -48,7 +48,6 @@ public class FontPickerPreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, LifecycleObserver, OnResume {
     private static final String TAG = "FontPickerPreferenceController";
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
-    private static final String SUBS_PACKAGE = "projekt.substratum";
 
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
@@ -67,22 +66,15 @@ public class FontPickerPreferenceController extends AbstractPreferenceController
         if (mFontPreference == null) {
             return;
         }
-        if (!isPackageInstalled(SUBS_PACKAGE, mContext)) {
-            mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
-        } else {
-            mFontPreference.setSummary(mContext.getString(
+        mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+        mFontPreference.setSummary(mContext.getString(
                     com.android.settings.R.string.disable_fonts_installed_title));
-        }
     }
 
     @Override
     public void displayPreference(PreferenceScreen screen) {
         mFontPreference = (FontDialogPreference) screen.findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
-        if (!isPackageInstalled(SUBS_PACKAGE, mContext)) {
-            mFontPreference.setEnabled(true);
-        } else {
-            mFontPreference.setEnabled(false);
-        }
+        mFontPreference.setEnabled(true);
     }
 
     @Override
