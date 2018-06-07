@@ -16,25 +16,10 @@
 
 package com.android.settings.display;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-
-import com.android.settings.core.PreferenceControllerMixin;
-import com.android.settingslib.core.AbstractPreferenceController;
-import com.android.settingslib.core.lifecycle.Lifecycle;
-import com.android.settingslib.core.lifecycle.LifecycleObserver;
-import com.android.settingslib.core.lifecycle.events.OnResume;
-import com.dirtyunicorns.tweaks.fragments.AccentPicker;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.content.FontInfo;
 import android.content.IFontService;
-import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.support.v7.preference.ListPreference;
@@ -43,6 +28,21 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceClickListener;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.android.settings.core.PreferenceControllerMixin;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.core.lifecycle.LifecycleObserver;
+import com.android.settingslib.core.lifecycle.events.OnResume;
+
+import com.dirtyunicorns.tweaks.fragments.AccentPicker;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
 public class FontPickerPreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, LifecycleObserver, OnResume {
@@ -97,15 +97,5 @@ public class FontPickerPreferenceController extends AbstractPreferenceController
 
     public void stopProgress() {
         mFontPreference.stopProgress();
-    }
-
-    private boolean isPackageInstalled(String package_name, Context context) {
-        try {
-            PackageManager pm = context.getPackageManager();
-            pm.getPackageInfo(package_name, PackageManager.GET_ACTIVITIES);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
     }
 }

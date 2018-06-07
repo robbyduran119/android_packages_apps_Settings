@@ -15,26 +15,26 @@ package com.android.settings.display;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.Handler;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
-import android.provider.Settings;
+import android.text.TextUtils;
+import android.widget.Toast;
 
-import com.android.internal.statusbar.ThemeUtils;
+import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 
+import com.android.internal.statusbar.ThemeUtils;
+
 import libcore.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.android.settings.R;
-import android.content.Intent;
-import android.os.Handler;
-import android.widget.Toast;
 
 public class DarkUIPreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin, Preference.OnPreferenceChangeListener {

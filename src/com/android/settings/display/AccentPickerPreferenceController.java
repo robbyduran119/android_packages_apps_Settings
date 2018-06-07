@@ -21,7 +21,6 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceClickListener;
 import android.support.v7.preference.PreferenceScreen;
 
-import com.android.internal.statusbar.ThemeUtils;
 import com.android.settings.core.PreferenceControllerMixin;
 
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -30,6 +29,8 @@ import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnResume;
 
 import com.dirtyunicorns.tweaks.fragments.AccentPicker;
+
+import com.android.internal.statusbar.ThemeUtils;
 
 public class AccentPickerPreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, LifecycleObserver, OnResume {
