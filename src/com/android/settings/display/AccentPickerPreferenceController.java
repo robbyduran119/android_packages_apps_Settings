@@ -21,9 +21,9 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceClickListener;
 import android.support.v7.preference.PreferenceScreen;
 
+import com.android.internal.statusbar.ThemeUtils;
 import com.android.settings.core.PreferenceControllerMixin;
 
-import com.android.settingslib.ThemeUtils;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
